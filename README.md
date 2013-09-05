@@ -13,37 +13,37 @@ base64url
 SYNOPSIS
 --------
 
-**`#include <rb64u.h>`**
+<code>
+**#include <rb64u.h>**
 
-<code>**int base64url\_encode(char \***_dest_**, const size\_t** _maxlen_**, const char \***_src_**, const size\_t** _len_**, size\_t \***_dlen_**);**</code>
+**int base64url\_encode(char \***_dest_**, const size\_t** _maxlen_**, const char \***_src_**, const size\_t** _len_**, size\_t \***_dlen_**);**
 
-<code>**int base64url\_decode(char \***_dest_**, const size\_t** _maxlen_**, const char \***_src_**, const size\_t** _len_**, size\_t \***_dlen_**);**</code>
-<br />
+**int base64url\_decode(char \***_dest_**, const size\_t** _maxlen_**, const char \***_src_**, const size\_t** _len_**, size\_t \***_dlen_**);**
 
-<code>**void base64url\_encode\_reset(b64ue\_t \***_state_**);**</code>
 
-<code>**int base64url\_encode\_ingest(b64ue\_t \***_state_**, char** _c_**);**</code>
+**void base64url\_encode\_reset(b64ue\_t \***_state_**);**
 
-<code>**int base64url\_encode\_getc(b64ue\_t \***_state_**);**</code>
+**int base64url\_encode\_ingest(b64ue\_t \***_state_**, char** _c_**);**
 
-<code>**int base64url\_encode\_finish(b64ue\_t \***_state_**);**</code>
-<br />
+**int base64url\_encode\_getc(b64ue\_t \***_state_**);**
 
-<code>**void base64url\_decode\_reset(b64ud\_t \***_state_**);**</code>
+**int base64url\_encode\_finish(b64ue\_t \***_state_**);**
 
-<code>**int base64url\_decode\_ingest(b64ud\_t \***_state_**, unsigned char** _c_**);**</code>
+**void base64url\_decode\_reset(b64ud\_t \***_state_**);**
 
-<code>**int base64url\_decode\_getc(b64ud\_t \***_state_**);**</code>
+**int base64url\_decode\_ingest(b64ud\_t \***_state_**, unsigned char** _c_**);**
 
-<code>**int base64url\_decode\_finish(b64ud\_t \***_state_**);**</code>
+**int base64url\_decode\_getc(b64ud\_t \***_state_**);**
+
+**int base64url\_decode\_finish(b64ud\_t \***_state_**);**</code>
 
 
 DESCRIPTION
 -----------
 
-<code>**`base64url_encode()`** and **`base64url_decode()`** are convenience functions, provided for operating on static buffers, where streaming functionality is not needed.</code>
+<p>**`base64url_encode()`** and **`base64url_decode()`** are convenience functions, provided for operating on static buffers, where streaming functionality is not needed.</p>
 
-<code>both functions read up to _`len`_ bytes from an input buffer _`src`_ and write no more than _`maxlen`_ bytes to an output buffer _`dest`_.</code>
+<p>both functions read up to _`len`_ bytes from an input buffer _`src`_ and write no more than _`maxlen`_ bytes to an output buffer _`dest`_.</p>
 
 <code>if **NULL** is specified for the parameter _`dlen`_ then it is ignored, otherwise, the number of bytes written to _`dest`_ before terminating (either in success or in error) will be stored in the given location.</code>
 
