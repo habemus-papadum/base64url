@@ -13,36 +13,29 @@ base64url
 SYNOPSIS
 --------
 
-    **#include <rb64u.h>**
+```c
+    #include <rb64u.h>
     
-    **int base64url_encode(char \***_dest_**, const size\_t** _maxlen_**, const char \***_src_**, const size\_t** _len_**, size\_t \***_dlen_**);**
+    int base64url_encode (char *dest, const size_t maxlen, const char *src, const size_t len, size_t *dlen);
+    int base64url_decode (char *dest, const size_t maxlen, const char *src, const size_t len, size_t *dlen);
     
-    **int base64url_decode(char \***_dest_**, const size\_t** _maxlen_**, const char \***_src_**, const size\_t** _len_**, size\_t \***_dlen_**);**
+    void base64url_encode_reset  (b64ue_t *state);
+    int  base64url_encode_ingest (b64ue_t *state, char c);
+    int  base64url_encode_getc   (b64ue_t *state);
+    int  base64url_encode_finish (b64ue_t *state);
     
-    
-    **void base64url\_encode\_reset(b64ue\_t \***_state_**);**
-    
-    **int base64url\_encode\_ingest(b64ue\_t \***_state_**, char** _c_**);**
-    
-    **int base64url\_encode\_getc(b64ue\_t \***_state_**);**
-    
-    **int base64url\_encode\_finish(b64ue\_t \***_state_**);**
-    
-    **void base64url\_decode\_reset(b64ud\_t \***_state_**);**
-    
-    **int base64url\_decode\_ingest(b64ud\_t \***_state_**, unsigned char** _c_**);**
-    
-    **int base64url\_decode\_getc(b64ud\_t \***_state_**);**
-    
-    **int base64url\_decode\_finish(b64ud\_t \***_state_**);**
-
+    void base64url_decode_reset  (b64ud_t *state);
+    int  base64url_decode_ingest (b64ud_t *state, unsigned char c);
+    int  base64url_decode_getc   (b64ud_t *state);
+    int  base64url_decode_finish (b64ud_t *state);
+```
 
 DESCRIPTION
 -----------
 
-<p>**`base64url_encode()`** and **`base64url_decode()`** are convenience functions, provided for operating on static buffers, where streaming functionality is not needed.</p>
+**`base64url_encode()`** and **`base64url_decode()`** are convenience functions, provided for operating on static buffers, where streaming functionality is not needed.
 
-<p>both functions read up to _`len`_ bytes from an input buffer _`src`_ and write no more than _`maxlen`_ bytes to an output buffer _`dest`_.</p>
+both functions read up to _`len`_ bytes from an input buffer _`src`_ and write no more than _`maxlen`_ bytes to an output buffer _`dest`_.
 
 <code>if **NULL** is specified for the parameter _`dlen`_ then it is ignored, otherwise, the number of bytes written to _`dest`_ before terminating (either in success or in error) will be stored in the given location.</code>
 
