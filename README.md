@@ -13,29 +13,28 @@ base64url
 SYNOPSIS
 --------
 
-<code>
-**#include <rb64u.h>**
-
-**int base64url\_encode(char \***_dest_**, const size\_t** _maxlen_**, const char \***_src_**, const size\_t** _len_**, size\_t \***_dlen_**);**
-
-**int base64url\_decode(char \***_dest_**, const size\_t** _maxlen_**, const char \***_src_**, const size\_t** _len_**, size\_t \***_dlen_**);**
-
-
-**void base64url\_encode\_reset(b64ue\_t \***_state_**);**
-
-**int base64url\_encode\_ingest(b64ue\_t \***_state_**, char** _c_**);**
-
-**int base64url\_encode\_getc(b64ue\_t \***_state_**);**
-
-**int base64url\_encode\_finish(b64ue\_t \***_state_**);**
-
-**void base64url\_decode\_reset(b64ud\_t \***_state_**);**
-
-**int base64url\_decode\_ingest(b64ud\_t \***_state_**, unsigned char** _c_**);**
-
-**int base64url\_decode\_getc(b64ud\_t \***_state_**);**
-
-**int base64url\_decode\_finish(b64ud\_t \***_state_**);**</code>
+    **#include <rb64u.h>**
+    
+    **int base64url_encode(char \***_dest_**, const size\_t** _maxlen_**, const char \***_src_**, const size\_t** _len_**, size\_t \***_dlen_**);**
+    
+    **int base64url_decode(char \***_dest_**, const size\_t** _maxlen_**, const char \***_src_**, const size\_t** _len_**, size\_t \***_dlen_**);**
+    
+    
+    **void base64url\_encode\_reset(b64ue\_t \***_state_**);**
+    
+    **int base64url\_encode\_ingest(b64ue\_t \***_state_**, char** _c_**);**
+    
+    **int base64url\_encode\_getc(b64ue\_t \***_state_**);**
+    
+    **int base64url\_encode\_finish(b64ue\_t \***_state_**);**
+    
+    **void base64url\_decode\_reset(b64ud\_t \***_state_**);**
+    
+    **int base64url\_decode\_ingest(b64ud\_t \***_state_**, unsigned char** _c_**);**
+    
+    **int base64url\_decode\_getc(b64ud\_t \***_state_**);**
+    
+    **int base64url\_decode\_finish(b64ud\_t \***_state_**);**
 
 
 DESCRIPTION
